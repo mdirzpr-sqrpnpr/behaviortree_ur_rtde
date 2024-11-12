@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>bt_coordinator</name>
+  <version>0.0.1</version>
+  <description>The Behavior Tree Coordinator Node for controlling robots</description>
+  <maintainer email="mdirzpr.sqrpnpr@gmail.com">mdirzpr sqr pnpr</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Build and runtime dependencies -->
+  <depend>rclcpp</depend>
+  <depend>behavior_tree_cpp</depend>
+  <depend>ament_index_cpp</depend>
+
+  <!-- Testing dependencies (if you have tests) -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- Export the package configuration -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

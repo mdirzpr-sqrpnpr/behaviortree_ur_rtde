@@ -1,0 +1,77 @@
+{
+    "brand": "Universal Robot",
+    "model": "UR5e",
+    "general_config": {
+      "num_joints": 6,
+      "joint_names": {
+        "joint_01": "joint_1",
+        "joint_02": "joint_2",
+        "joint_03": "joint_3",
+        "joint_04": "joint_4",
+        "joint_05": "joint_5",
+        "joint_06": "joint_6"
+      },
+      "hardware_limits": {
+        "joint_limits": {
+          "joint_01": [-360.0, 360.0],
+          "joint_02": [-360.0, 360.0],
+          "joint_03": [-360.0, 360.0],
+          "joint_04": [-360.0, 360.0],
+          "joint_05": [-360.0, 360.0],
+          "joint_06": [-360.0, 360.0]
+        },
+        "speed_limits": {
+          "joint_01": [-360.0, 360.0],
+          "joint_02": [-360.0, 360.0],
+          "joint_03": [-360.0, 360.0],
+          "joint_04": [-360.0, 360.0],
+          "joint_05": [-360.0, 360.0],
+          "joint_06": [-360.0, 360.0]
+        }
+      },
+      "software_limits": {
+        "joint_01": [-170.0, 170.0],
+        "joint_02": [-110.0, 130.0],
+        "joint_03": [-65.0, 200.0],
+        "joint_04": [-200.0, 200.0],
+        "joint_05": [-123.0, 123.0],
+        "joint_06": [-455.0, 455.0]
+      }
+    },
+    "interfaces": [
+      {
+        "name": "RTDE"
+      }
+    ],
+    "services": [
+      {
+        "name": "Linear movement in Cartesian space",
+        "service_name": "moveL",
+        "type": "mandatory",
+        "parameters": ["pose", "speed", "acceleration"]
+      },
+      {
+        "name": "Joint-based movement",
+        "service_name": "moveJ",
+        "type": "",
+        "parameters": ["joint_positions", "speed", "acceleration"]
+      },
+      {
+        "name": "Get the current TCP pose in Cartesian space",
+        "service_name": "getActualTCPPose",
+        "type": "",
+        "parameters": []
+      },
+      {
+        "name": "Get the current joint positions",
+        "service_name": "getActualJointPositions",
+        "type": "",
+        "parameters": []
+      }
+    ],
+    "parameters": {
+      "speed_limit": 0.5,
+      "acceleration_limit": 0.5
+    }
+  }
+  

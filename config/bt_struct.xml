@@ -1,0 +1,32 @@
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="MainSequence">
+            <!-- Robot 1 Sequence -->
+            <Sequence name="Robot1Sequence">
+                <HomeAction robot_ip="192.168.0.101" home_joint_positions="[0.0, -1.57, 1.57, -1.57, -1.57, 0.0]" speed="0.5" acceleration="0.5"/>
+                <MoveLAction robot_ip="192.168.0.101"
+                             position="[0.3, 0.0, 0.2]" orientation="[0.0, 3.1416, 0.0]"
+                             speed="0.5" acceleration="0.5"/>
+                <!-- Simulate Pick Action -->
+                <WaitAction name="Wait1" delay_msec="1000"/>
+                <MoveLAction robot_ip="192.168.0.101"
+                             position="[0.5, 0.0, 0.2]" orientation="[0.0, 3.1416, 0.0]"
+                             speed="0.5" acceleration="0.5"/>
+                <!-- Simulate Place Action -->
+                <WaitAction name="Wait2" delay_msec="1000"/>
+                <HomeAction robot_ip="192.168.0.101" home_joint_positions="[0.0, -1.57, 1.57, -1.57, -1.57, 0.0]" speed="0.5" acceleration="0.5"/>
+            </Sequence>
+            <!-- Robot 2 Sequence -->
+            <Sequence name="Robot2Sequence">
+                <HomeAction robot_ip="192.168.0.102" home_joint_positions="[0.5, -1.0, 1.0, -1.0, -1.0, 0.5]" speed="0.5" acceleration="0.5"/>
+                <MoveLAction robot_ip="192.168.0.102"
+                             position="[0.6, 0.1, 0.3]" orientation="[0.0, 3.1416, 0.0]"
+                             speed="0.5" acceleration="0.5"/>
+                <MoveJAction robot_ip="192.168.0.102"
+                             joint_positions="[1.0, -1.0, 1.5, -1.0, 0.5, 0.0]"
+                             speed="0.5" acceleration="0.5"/>
+                <HomeAction robot_ip="192.168.0.102" home_joint_positions="[0.5, -1.0, 1.0, -1.0, -1.0, 0.5]" speed="0.5" acceleration="0.5"/>
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+</root>
